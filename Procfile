@@ -1,1 +1,1 @@
-web: gunicorn swithee.wsgi
+web: gunicorn ProjectDjango1.wsgi
