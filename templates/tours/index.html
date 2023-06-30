@@ -1,0 +1,33 @@
+{% extends 'tours/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="container mt-3">
+        <!-- HERO -->
+
+        <div class="jumbotron text-center mt-4">
+            <h1 class="display-4">Всякие туры</h1>
+            <p class="lead">Для тех, кого отвлекают дома</p>
+            <p class="mt-5 w-50 mx-auto">Лучшие направления,где никто не будет вам мешать сидеть на берегу и изучать
+                программирование, дизайн, разработку игр и управление продуктами</p>
+        </div>
+
+        <!-- CARDS -->
+
+        <div class="row mt-5" data-test="cards">
+            {% for lab in label %}
+                <div class="col-4" data-test="card">
+                    <div class="card mb-3">
+                        <img src="{{ lab.image }}" class="card-img-top img-fluid" data-test="picture">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ lab.hotel_title }}</h5>
+                            <p class="card-text">{{ lab.description|slice:93 }}</p>
+                            <a href="departure/{{ lab.city }}/tour/{{ lab.id }}" class="btn btn-sm btn-primary"
+                               data-test="tourlink">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

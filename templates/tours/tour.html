@@ -1,0 +1,48 @@
+{% extends 'tours/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSSDesk</title>
+    <style type="text/css">
+
+        body {
+            background-color: #2574b0;
+        }
+
+
+    </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ name_hotel }}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+{% block content %}
+<div class="container mt-3">
+
+    <h1 class="display-3 mt-4" data-test="title">{{ name_hotel }} {{ stars }}★</h1>
+
+    <!-- HERO -->
+
+    <p class="lead" data-test="lead"><span data-test="country">{{ country }}</span> Из <span
+            data-text="departure">{{ departure }}</span> <span data-text="nights">{{ nights }}</span> ночей</p>
+
+    <img data-test="picture"
+         src='{{ url_image }}'
+         class="w-75" alt="">
+
+    <p class="my-4 w-75" data-test="description">{{ description }}</p>
+
+    <a href="" class="btn btn-success btn-lg" data-test="buybutton">Купить тур за <span
+            data-test="price">{{ price }}</span></a>
+</div>
+{% endblock %}
+</body>
+</html>
+</body>
+</html>
